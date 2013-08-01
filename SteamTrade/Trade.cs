@@ -586,13 +586,13 @@ namespace SteamTrade
         {
             ulong itemID = tradeEvent.assetid;
 
-            if (null != OtherInventory)
+            if (OtherInventory != null)
             {
                 Inventory.Item item = OtherInventory.GetItem(itemID);
-                if (null != item)
+                if (item != null)
                 {
                     Schema.Item schemaItem = CurrentSchema.GetItem(item.Defindex);
-                    if (null == schemaItem)
+                    if (schemaItem == null)
                     {
                         // TODO: Log this (counldn't find the item in CurrentSchema
                     }
@@ -608,7 +608,7 @@ namespace SteamTrade
             else
             {
                 var schemaItem = GetItemFromPrivateBp(tradeEvent, itemID);
-                if (null == schemaItem)
+                if (schemaItem == null)
                 {
                     // TODO: Log this (couldn't find item in CurrentSchema)
                 }
@@ -646,10 +646,10 @@ namespace SteamTrade
             if (OtherInventory != null)
             {
                 Inventory.Item item = OtherInventory.GetItem(itemID);
-                if (null != item)
+                if (item != null)
                 {
                     Schema.Item schemaItem = CurrentSchema.GetItem(item.Defindex);
-                    if (null == schemaItem)
+                    if (schemaItem == null)
                     {
                         // TODO: Add log (counldn't find item in CurrentSchema)
                     }
@@ -665,7 +665,7 @@ namespace SteamTrade
             else
             {
                 var schemaItem = GetItemFromPrivateBp(tradeEvent, itemID);
-                if (null == schemaItem)
+                if (schemaItem == null)
                 {
                     // TODO: Add log (counldn't find item in CurrentSchema)
                 }
